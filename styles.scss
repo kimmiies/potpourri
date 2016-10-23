@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+}
+
+.container-fluid {
+  background: #fff;
+  color: #000;
+  font: 18px/1.2 'Meta Offc', Helvetica, Arial, Verdana, sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  padding-top: 40px;
+  font-size: 2rem;
+}
+h2 {
+  margin: 0;
+  padding-top: 40px;
+  /*text-transform: uppercase;*/
+}
+
+p {
+  font-size: 0.5rem;
+}
+.navbar {
+    display: block;
+    height: 100px;
+    // background: url("images/potpourri.jpg");
+    background-color: lightblue;
+    opacity: 0.8;
+    background-size: contain;
+    color: #46071a
+}
+
+.section1 {
+    background-color: #ffffff;
+    color: #02c2c5;
+    padding: 40px;
+}
+
+.hero-image {
+  padding-top: 20px;
+  width: 200px;
+  height: 200px;
+}
+
+.section2,
+.section4 {
+    background-color: #02c2c5;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+}
+
+.section2 .nav {
+  padding-top: 40px;
+  padding-right: 40px;
+  border: solid;
+  display: inline-block;
+  width: 800px;
+}
+
+.section2 .nav li {
+    text-align: center;
+    display: inline-block;
+    padding: 0 20px;
+    width: 25%;
+}
+
+.section2 .nav li .emoji {
+    width: 143px;
+    height: 143px;
+    border-radius: 50%;
+    background-color: #64d6d9;
+    position: relative;
+}
+
+.section2 .nav li .emoji img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.section2 h3 {
+    font-size: 14px
+}
+
+
+.section3 {
+  background-color: #ffffff;
+  color: #02c2c5;
+  padding: 40px;
+
+}
+
+
+.footer {
+    margin: 0;
+    display: block;
+    height: 100px;
+    // background: url("images/potpourri.jpg");
+    background-color: lightblue;
+    opacity: 0.8;
+    background-size: contain;
+    color: #46071a
+}
+
+.footer h3 {
+  margin: 0;
+}

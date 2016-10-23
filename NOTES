@@ -1,0 +1,18 @@
+GOOGLE CHARTS:
+
+Inside Movements Render:
+
+    // let chartData = [['Date','movementFrequency']]
+    //
+    // this.state.movements.map(movement => {
+    //   chartData.push([movement.movementDate, movement.movementFrequency])
+    // })
+
+
+    // 'this is still the component'
+
+
+    <GoogleChart
+      data={chartData}
+      orientation={'horizontal'}
+      />
