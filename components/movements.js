@@ -27,14 +27,14 @@ var MyComponent = React.createClass({
         <h2>You have tracked { this.state.movements.length } movements so far!</h2>
 
         <div className="display">
-        
-          { this.state.movements.map(function(movement, i){
 
-            return <div className='row' key={ i } >
+        { Object.keys(this.state.movements).map(function(id) {
+          var movement = component.state.movements[id]
+          return <div className='row' key={ id } >
               <h5>
-                movementDate: { movement.movementDate },
-                movementType: { movement.movementType },
-                movementFrequency: {movement.movementFrequency },
+                Date: { movement.movementDate },
+                Type: { movement.movementType },
+                Frequency: { movement.movementFrequency },
                 When: { movement.movementTimeOfDay}
               </h5>
             </div>
