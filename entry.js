@@ -1,12 +1,17 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-
 var MyComponentOld = require('./components/static.js');
 var MyComponent = require('./components/movements.js');
 
-// Include your React components like this:
-// var MyComponent = require('components/my_component');
 require("./styles.scss");
+
+
+
+
+
+
+
+
 
 
 // Initialize Firebase

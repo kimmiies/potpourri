@@ -16,3 +16,61 @@ Inside Movements Render:
       data={chartData}
       orientation={'horizontal'}
       />
+
+
+
+
+Attempt 2:
+
+var chartData = [['movementDate','movementFrequency']]
+
+{ Object.keys(this.state.movements).map(function(id) {
+  var movement = component.state.movements[id];
+
+  chartData.push([movement.movementDate, movement.movementFrequency])
+  })
+}
+
+<GoogleChart
+  data={chartData}
+  orientation={'horizontal'}
+  />
+
+
+var chartData = [['movementDate','movementFrequency']]
+
+  <Chart
+    chartType="BarChart"
+    data=chartData
+    options={{orientation: horizontal}}
+    graph_id="BarChart"
+    width="100%"
+    height="400px"
+    legend_toggle
+   />
+
+
+
+
+
+
+
+
+
+
+{
+  "chartType":"BarChart",
+  "data":[
+    ["Element","Density",{"role":"style"}],
+    ["Copper",8.94,"#b87333"],
+    ["Silver",10.49,"silver"],
+    ["Gold",19.3,"gold"],
+    ["Platinum",21.45,"color: #e5e4e2"]
+  ],
+  "width":"100%",
+  "height":"300px",
+  "options":{"title":"Density of Precious Metals, in g/cm^3",
+  "bar":{"groupWidth":"95%"},
+  "legend":{"position":"none"}},
+  "chartEvents":[{"eventName":"onmouseover"}]
+}

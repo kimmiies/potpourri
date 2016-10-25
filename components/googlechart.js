@@ -14,5 +14,5 @@ const GoogleChart = props => {
      />
   )
 }
-
-export default GoogleChart
+// 
+// export default GoogleChart
