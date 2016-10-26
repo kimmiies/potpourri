@@ -3,8 +3,8 @@ var ReactDOM = require('react-dom');
 var firebase = require('firebase');
 var $ = require('jquery');
 var moment = require('moment');
-import { Chart } from 'react-google-charts'
-// import GoogleChart from './googlechart'
+var Display = require('./display');
+import GoogleChart from './googlechart'
 
 var MyComponent = React.createClass({
   getInitialState: function() {
@@ -21,64 +21,32 @@ var MyComponent = React.createClass({
   render: function() {
     var component = this;
 
-    var chartData1 = [['movementDate','movementFrequency']]
+    var chartData = [['movementType','movementFrequency']]
 
     Object.keys(this.state.movements).map(function(id) {
       var movement = component.state.movements[id];
-
-      chartData1.push([moment(movement.movementDate).toDate(), movement.movementFrequency])
+      chartData.push([movement.movementType, movement.movementFrequency])
       })
-      console.log(chartData1);
-
-    var chartData2 = [['movementType','movementFrequency']]
-
-    Object.keys(this.state.movements).map(function(id) {
-      var movement = component.state.movements[id];
-
-      chartData2.push([movement.movementType, movement.movementFrequency])
-      })
-      console.log(chartData2);
+      console.log(chartData);
 
     return <div>
+    
+      <h1>Hello</h1>
+      <h2>You have tracked { Object.keys(this.state.movements).length } movements so far!</h2>
 
-        <h1>Hello</h1>
-        <h2>You have tracked { Object.keys(this.state.movements).length } movements so far!</h2>
-
-        <div className="display">
-
+      <div className="display">
         { Object.keys(this.state.movements).map(function(id) {
           var movement = component.state.movements[id]
           return <div className='row' key={ id } >
-              <h5>
-                Date: { movement.movementDate },
-                Type: { movement.movementType },
-                Frequency: { movement.movementFrequency },
-                When: { movement.movementTimeOfDay}
-              </h5>
+              <Display hello={movement}/>
             </div>
           })}
-        </div>
+      </div>
 
-
-       <Chart
-         chartType="BarChart"
-         data={chartData1}
-         options={{orientation: 'horizontal'}}
-         graph_id="BarChart"
-         width="100%"
-         height="400px"
-         legend_toggle
-        />
-
-        <Chart
-          chartType="BarChart"
-          data={chartData2}
-          options={{orientation: 'horizontal'}}
-          graph_id="BarChart"
-          width="100%"
-          height="400px"
-          legend_toggle
-         />
+      <GoogleChart
+          data={chartData}
+          orientation={'horizontal'}
+          />
 
         <div className="tracker">
 

@@ -1,18 +1,20 @@
 import React from 'react'
 import { Chart } from 'react-google-charts'
 
-const GoogleChart = props => {
-  return (
-    <Chart
-      chartType="BarChart"
-      data={props.data}
-      options={{orientation: props.orientation}}
-      graph_id="BarChart"
-      width="100%"
-      height="400px"
-      legend_toggle
-     />
-  )
-}
-// 
-// export default GoogleChart
+var GoogleChart = React.createClass({
+  render: function() {
+    return <div>
+      <Chart
+        chartType="BarChart"
+        data={this.props.data}
+        options={{orientation: this.props.orientation}}
+        graph_id="BarChart"
+        width="100%"
+        height="400px"
+        legend_toggle
+       />
+     </div>
+  }
+})
+
+module.exports = GoogleChart;
