@@ -5,16 +5,24 @@ var $ = require('jquery');
 var moment = require('moment');
 var Display = require('./display');
 var NewMovement = require('./new_movement');
+var Login = require('./login');
 import GoogleChart from './googlechart'
 
 var MyComponent = React.createClass({
   getInitialState: function() {
     return {
       movements: {},
+      currentUser: "Kimmiies",
+      loggedIn: false
     }
   },
 
   render: function() {
+    if (!this.state.loggedIn) {
+      console.log(Login);
+      return <Login onLogin={ this.loginParent }/>
+    } else {
+
     var component = this;
 
     var chartData = [['movementType','movementFrequency']]
@@ -27,7 +35,8 @@ var MyComponent = React.createClass({
 
     return <div>
 
-      <h1>Hello</h1>
+      <h1>Welcome, { this.state.currentUser }</h1>
+
       <h2>You have tracked { Object.keys(this.state.movements).length } movements so far!</h2>
 
       <div className="display">
@@ -47,9 +56,13 @@ var MyComponent = React.createClass({
       <NewMovement onAddMovement={ this.addMovement } />
 
     </div>
+    }
   },
-  
+
   // Pass a prop to our child component New Movement. The prop is a function that's available on parent component (this.addMovement) and we're going to pass it down as onAddMovement
+  loginParent: function(email) {
+    this.setState({loggedIn: true, currentUser: email })
+  },
 
   addMovement: function(newMovement) {
     // structuring data you want to put into database/building the structure of what you want to send
@@ -79,9 +92,7 @@ var MyComponent = React.createClass({
         }.bind(this)
     })
   }
-
 });
-
 
 
 module.exports = MyComponent;
