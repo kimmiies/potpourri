@@ -2,17 +2,22 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var firebase = require('firebase');
 var $ = require('jquery');
-var moment = require('moment');
+var Login = require('./login');
+
+
+// Components
 var Display = require('./display');
 var NewMovement = require('./new_movement');
-var Login = require('./login');
-import GoogleChart from './googlechart'
+var GoogleChart = require('./googlechart')
+// Features
+var moment = require('moment');
+
 
 var MyComponent = React.createClass({
   getInitialState: function() {
     return {
       movements: {},
-      currentUser: "Kimmiies",
+      currentUser: "",
       loggedIn: false
     }
   },
@@ -60,8 +65,8 @@ var MyComponent = React.createClass({
   },
 
   // Pass a prop to our child component New Movement. The prop is a function that's available on parent component (this.addMovement) and we're going to pass it down as onAddMovement
-  loginParent: function(email) {
-    this.setState({loggedIn: true, currentUser: email })
+  loginParent: function(name) {
+    this.setState({loggedIn: true, currentUser: name })
   },
 
   addMovement: function(newMovement) {

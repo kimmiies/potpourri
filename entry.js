@@ -1,7 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var MyComponentOld = require('./components/static.js');
-var MyComponent = require('./components/movements.js');
+import Routes from'./components/routes';
+// var MyComponent = require('./components/movements.js');
 
 require("./styles.scss");
 
@@ -17,4 +17,9 @@ firebase.initializeApp(config);
 
 
 
-ReactDOM.render(<MyComponent />, document.getElementById("placeholder"));
+// ReactDOM.render(<MyComponent />, document.getElementById("placeholder"));
+
+ReactDOM.render(
+  <Routes />,
+  document.getElementById('root')
+);
